@@ -49,7 +49,7 @@ public class AdmitBookStoreDAO {
             String title = rs.getString(2);
             String author = rs.getString(3);
             double price = rs.getDouble(4);
-            list.add(new Book(isbn, title, author, price));
+            //list.add(new Book(isbn, title, author, price));
         }
         return list;
     }

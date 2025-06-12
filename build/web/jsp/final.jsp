@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,14 +11,17 @@
         <h2>Online Bookstore</h2>
         <hr>
         <h3>Thank you for shopping with us.</h3>
-        <%
-            String message = (String) request.getAttribute("result");
-            session.invalidate();
-        %>
+
         <table>
             <tr>
-                <td><%= message%></td>
+                <td>${requestScope.result}</td>
             </tr>
         </table>
+
+        <c:if test="${not empty session}">
+            <c:remove var="cart" scope="session"/>
+            <c:remove var="books" scope="session"/>
+            <c:remove var="error" scope="session"/>
+        </c:if>
     </body>
 </html>

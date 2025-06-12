@@ -8,11 +8,9 @@
         <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
     <body>
-        
         <h2>Thank You For Shopping at Bookstore</h2>
         <hr>
         <h3>Your credit card details are being validated</h3>
         <% session.invalidate();%>
-        
     </body>
 </html>
